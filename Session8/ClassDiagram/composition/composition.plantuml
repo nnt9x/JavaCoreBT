@@ -1,0 +1,50 @@
+@startuml
+
+title __COMPOSITION's Class Diagram__\n
+
+  namespace composition {
+    class composition.Car {
+        - name : String
+        - price : double
+        - engine : Engine {readOnly}
+        + Car(...)
+        + Car(...)
+        + getEngine()
+        + getName()
+        + getPrice()
+        + setName()
+        + setPrice()
+    }
+  }
+
+  namespace composition {
+    class composition.Engine {
+        - volume : int
+        - type: CAR_ENGINE_TYPE
+        + Engine()
+        + Engine()
+        + getType()
+        + getVolume()
+        + setType()
+        + setVolume()
+    }
+  }
+
+  namespace composition {
+      enum CAR_ENGINE_TYPE {
+        DIESEL
+        ELECTRICAL
+        GASOLINE
+      }
+    }
+  
+
+  composition.Car *-- composition.Engine : engine
+  composition.Engine --- composition.CAR_ENGINE_TYPE : type
+
+
+right footer
+
+endfooter
+
+@enduml

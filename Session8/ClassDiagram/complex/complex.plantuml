@@ -1,0 +1,64 @@
+@startuml
+
+title __COMPLEX's Class Diagram__\n
+
+  namespace complex {
+    class complex.Engine {
+        - power : int
+        - volume : int
+        - type: MOTO_ENGINE_TYPE
+        + Engine()
+        + getPower()
+        + getType()
+        + getVolume()
+        + setPower()
+        + setType()
+        + setVolume()
+    }
+  }
+  
+
+  namespace complex {
+    enum MOTO_ENGINE_TYPE {
+      ELECTRICAL
+      GASOLINE
+    }
+  }
+  
+
+  namespace complex {
+    class complex.Moto {
+        - name : String
+        - wheels : List<Wheel>
+        - engine : Engine {readOnly}
+        + Moto(...)
+        + Moto(...)
+        + getEngine()
+        + getName()
+        + getWheels()
+        + setName()
+        + setWheels()
+    }
+  }
+  
+
+  namespace complex {
+    class complex.Wheel {
+        - size : int
+        + Wheel()
+        + Wheel()
+        + getSize()
+        + setSize()
+    }
+  }
+  
+
+  complex.Engine --- complex.MOTO_ENGINE_TYPE : type
+  complex.Moto *-- complex.Engine : engine
+  complex.Moto o-- complex.Wheel: wheels
+
+right footer
+
+endfooter
+
+@enduml

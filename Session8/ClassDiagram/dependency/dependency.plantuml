@@ -1,0 +1,46 @@
+@startuml
+
+title __DEPENDENCY's Class Diagram__\n
+
+  namespace dependency {
+    class dependency.Customer {
+        - address : String
+        - name : String
+        + Customer()
+        + getAddress()
+        + getName()
+        + pay()
+        + setAddress()
+        + setName()
+    }
+  }
+  
+
+  namespace dependency {
+    enum dependency.PAYMENT_TYPE {
+         CASH,
+         ATM
+    }
+  }
+  
+
+  namespace dependency {
+    class dependency.Payment {
+        - type : String
+        + Payment()
+        + Payment()
+        + getType()
+        + setType()
+    }
+  }
+
+  dependency.Payment --- dependency.PAYMENT_TYPE
+  dependency.Customer ..> dependency.Payment: use
+
+
+
+right footer
+
+endfooter
+
+@enduml

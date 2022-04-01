@@ -1,0 +1,53 @@
+@startuml
+
+title __AGGREGATION's Class Diagram__\n
+
+  namespace aggregation {
+    class aggregation.EAddress {
+        - addressLine : String
+        - city : String
+        - country : String
+        - state : String
+        - zip : int
+        + EAddress()
+        + EAddress(...)
+        + getAddressLine()
+        + getCity()
+        + getCountry()
+        + getState()
+        + getZip()
+        + setAddressLine()
+        + setCity()
+        + setCountry()
+        + setState()
+        + setZip()
+    }
+  }
+  
+
+  namespace aggregation {
+    class aggregation.Employee {
+        - age : int
+        - gender : boolean
+        - name : String
+        - EAddresses : List<EAddress>
+        + Employee()
+        + Employee(...)
+        + getAge()
+        + getEAddresses()
+        + getName()
+        + isGender()
+        + setAge()
+        + setEAddresses()
+        + setGender()
+        + setName()
+    }
+  }
+
+  aggregation.Employee o-- aggregation.EAddress: address
+
+right footer
+
+endfooter
+
+@enduml
