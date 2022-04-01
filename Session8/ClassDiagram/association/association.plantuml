@@ -30,6 +30,7 @@ title __ASSOCIATION's Class Diagram__\n
         - age : int
         - gender : boolean
         - name : String
+        - address: Address
         + Customer()
         + Customer(...)
         + getAddress()
