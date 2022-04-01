@@ -1,0 +1,99 @@
+@startuml
+
+title __QLDC's Class Diagram__\n
+
+  namespace qldc {
+    class qldc.HoDan {
+        - danhSachThanhVien : List<ThanhVien>
+        - diaChi : String
+        - soNha : String
+        + HoDan()
+        + HoDan()
+        + HoDan()
+        + getDanhSachThanhVien()
+        + getDiaChi()
+        + getSoNha()
+        + setDiaChi()
+        + setSoNha()
+        + themThanhVien()
+        + thongTinHoDan()
+        + timThanhVien()
+        + xoaThanhVien()
+        + xoaThanhVien()
+    }
+  }
+  
+
+  namespace qldc {
+    interface qldc.IHoDan {
+        {abstract} + themThanhVien()
+        {abstract} + thongTinHoDan()
+        {abstract} + timThanhVien()
+        {abstract} + xoaThanhVien()
+        {abstract} + xoaThanhVien()
+    }
+  }
+  
+
+  namespace qldc {
+    interface qldc.IKhuPho {
+        {abstract} + themHoDan()
+        {abstract} + thongTinKhuPho()
+        {abstract} + timHoDanTheoSoNha()
+        {abstract} + xoaHoDan()
+        {abstract} + xoaHoDan()
+    }
+  }
+  
+
+  namespace qldc {
+    class qldc.KhuPho {
+        - danhSachHoDan : List<HoDan>
+        - tenKhuPho : String
+        + KhuPho()
+        + KhuPho()
+        + getDanhSachHoDan()
+        + getTenKhuPho()
+        + setDanhSachHoDan()
+        + setTenKhuPho()
+        + themHoDan()
+        + thongTinKhuPho()
+        + timHoDanTheoSoNha()
+        + xoaHoDan()
+        + xoaHoDan()
+    }
+  }
+  
+
+  namespace qldc {
+    class qldc.ThanhVien {
+        - cccd : String
+        - hoTen : String
+        - ngheNghiep : String
+        - tuoi : int
+        + ThanhVien()
+        + ThanhVien()
+        + getCccd()
+        + getHoTen()
+        + getNgheNghiep()
+        + getTuoi()
+        + setCccd()
+        + setHoTen()
+        + setNgheNghiep()
+        + setTuoi()
+        + toString()
+    }
+  }
+  
+
+  qldc.HoDan .up.|> qldc.IHoDan
+  qldc.KhuPho .up.|> qldc.IKhuPho
+  qldc.ThanhVien -left-* qldc.HoDan
+  qldc.HoDan -left-o qldc.KhuPho
+
+
+right footer
+
+endfooter
+
+@enduml
