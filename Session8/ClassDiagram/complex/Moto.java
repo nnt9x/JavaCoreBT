@@ -2,7 +2,7 @@ package complex;
 
 /*
 Xe máy có 1 động cơ: dung tích, công suất và loại động cơ.
-(Động cơ được gắn liền với xe máy, ko tạo riêng trong lúc sử dụng - composite)
+(Động cơ được gắn liền với xe máy, ko tạo riêng trong lúc sử dụng - composition)
 
 Xe máy 2-3 bánh (kích thước), có thể thay thế bất kì lúc nào !
  */
